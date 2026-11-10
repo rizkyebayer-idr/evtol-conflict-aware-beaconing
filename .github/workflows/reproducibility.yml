@@ -1,0 +1,37 @@
+name: reproducibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install the two dependencies of the paper
+        run: pip install -r requirements.txt
+
+      - name: Regenerate all figures and tables
+        run: python run_all.py --skip-sweep
+
+      - name: Check that every figure and table was produced
+        run: |
+          for f in results/fig1_system_overview.png results/fig2_crossing_encounter.png \
+                   results/fig3_channel_load.png results/fig4_timeliness.png \
+                   results/table2_main_results.md results/table3_risk_scales.md; do
+            test -s "$f" || { echo "missing $f"; exit 1; }
+          done
+          echo "all artefacts regenerated"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: figures-and-tables
+          path: results/

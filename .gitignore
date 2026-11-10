@@ -1,0 +1,22 @@
+# Local scratch folder (not part of the repository)
+_local/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Intermediate files of the parallel sweep (results/sweep.csv is committed)
+results/sweep_N*.csv
+results/table3_[0-9].json
+
+# The manuscript is not distributed with the code.
+*.docx
+paper_figures/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

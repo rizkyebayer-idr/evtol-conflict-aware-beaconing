@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying manuscript and this repository."
+title: "Conflict-Risk-Aware Adaptive V2V Beaconing for eVTOL Air Taxis in Urban Air Corridors - reproducible simulation code"
+abstract: >-
+  NumPy/Matplotlib simulator that regenerates every figure, table and number of
+  the manuscript: corridor mobility of eVTOL air taxis, an unslotted ALOHA
+  air-to-air channel, the DCPA/TCPA conflict-risk beaconing rule, three
+  baselines, and the metrics of the paper together with a verification report.
+version: "1.0.0"
+date-released: "2026-11-10"
+license: MIT
+repository-code: "https://github.com/rizkyebayer-idr/evtol-conflict-aware-beaconing"
+keywords:
+  - eVTOL
+  - urban air mobility
+  - V2V communication
+  - adaptive beaconing
+  - conflict detection
+  - reproducible research
+# Replace the placeholder author list below with the author list of the
+# manuscript before publishing a citable release.
+authors:
+  - name: "rizkyebayer-idr"
+    website: "https://github.com/rizkyebayer-idr"
